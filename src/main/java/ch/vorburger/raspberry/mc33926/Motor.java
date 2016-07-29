@@ -1,7 +1,6 @@
 package ch.vorburger.raspberry.mc33926;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static com.pi4j.wiringpi.Gpio.PWM_MODE_MS;
 
 import com.pi4j.io.gpio.GpioController;
 import com.pi4j.io.gpio.GpioFactory;
@@ -9,6 +8,7 @@ import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.GpioPinPwmOutput;
 import com.pi4j.io.gpio.Pin;
 import com.pi4j.io.gpio.PinState;
+import com.pi4j.wiringpi.Gpio;
 
 public class Motor extends AbstractMotor {
 	// private static final Logger LOG = LoggerFactory.getLogger(Motor.class);
@@ -29,11 +29,12 @@ public class Motor extends AbstractMotor {
 	public Motor(Pin pwmPin, Pin directionPin, Pin enablePin) {
 		GpioController gpio = GpioFactory.getInstance();
 		
-		// provisionSoftPwmOutputPin VS provisionPwmOutputPin ?
-		pwmGpioPin = gpio.provisionPwmOutputPin(pwmPin, "pwm", 0);
+		Gpio.pwmSetMode(PWM_MODE_MS);
+		Gpio.pwmSetRange(MAX_SPEED);
+		Gpio.pwmSetClock(2);
+		
+		pwmGpioPin = gpio.provisionPwmOutputPin(pwmPin, "pwm");
 		pwmGpioPin.setPwmRange(MAX_SPEED);
-		// ? wiringpi.pwmSetMode(wiringpi.GPIO.PWM_MODE_MS)
-		// ? wiringpi.pwmSetClock(2)
 		
 		directionGpioPin = gpio.provisionDigitalOutputPin(directionPin, "direction");
 		enableGpioPin = gpio.provisionDigitalOutputPin(enablePin, "enable", PinState.LOW);
