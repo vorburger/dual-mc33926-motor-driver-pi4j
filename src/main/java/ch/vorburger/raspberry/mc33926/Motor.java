@@ -12,14 +12,12 @@ import com.pi4j.wiringpi.Gpio;
 
 public class Motor extends AbstractMotor {
 	// private static final Logger LOG = LoggerFactory.getLogger(Motor.class);
-	
+
 	/**
 	 * Motor speeds for this library are specified as numbers between -MAX_SPEED and MAX_SPEED, inclusive.
 	 */
-	public static final int MAX_SPEED = 480; // 19.2 MHz / 2 / 480 = 20 kHz	
+	public static final int MAX_SPEED = 480; // 19.2 MHz / 2 / 480 = 20 kHz
 
-	// private static wiringPiInitialized = false;
-	
 	private GpioPinPwmOutput pwmGpioPin;
 	private GpioPinDigitalOutput directionGpioPin;
 	private GpioPinDigitalOutput enableGpioPin;
@@ -28,18 +26,16 @@ public class Motor extends AbstractMotor {
 
 	public Motor(Pin pwmPin, Pin directionPin, Pin enablePin) {
 		GpioController gpio = GpioFactory.getInstance();
-		
+
 		Gpio.pwmSetMode(PWM_MODE_MS);
 		Gpio.pwmSetRange(MAX_SPEED);
 		Gpio.pwmSetClock(2);
-		
+
 		pwmGpioPin = gpio.provisionPwmOutputPin(pwmPin, "pwm");
 		pwmGpioPin.setPwmRange(MAX_SPEED);
-		
+
 		directionGpioPin = gpio.provisionDigitalOutputPin(directionPin, "direction");
 		enableGpioPin = gpio.provisionDigitalOutputPin(enablePin, "enable", PinState.LOW);
-		
-		// ? pwm/direction/enable/GpioPin.setShutdownOptions(...);
 	}
 
 	public void enable() {
@@ -55,8 +51,23 @@ public class Motor extends AbstractMotor {
 	public void setSpeed(int speed) {
 		if (!enabled)
 			enable();
-		
-		// TODO Auto-generated method stub
+
+		boolean direction;
+		if (speed < 0) {
+			speed = -speed;
+			direction = true;
+		} else {
+			direction = false;
+		}
+
+		if (speed > MAX_SPEED) {
+			speed = MAX_SPEED;
+		} else if (speed < -MAX_SPEED) {
+			speed = -MAX_SPEED;
+		}
+
+		directionGpioPin.setState(direction);
+		pwmGpioPin.setPwm(speed);
 	}
-	
+
 }
