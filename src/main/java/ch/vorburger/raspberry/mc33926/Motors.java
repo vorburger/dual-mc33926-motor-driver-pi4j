@@ -1,9 +1,16 @@
 package ch.vorburger.raspberry.mc33926;
 
+import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.RaspiBcmPin;
+import com.pi4j.io.gpio.RaspiGpioProvider;
+import com.pi4j.io.gpio.RaspiPinNumberingScheme;
 
 public class Motors {
 
+	static {
+		GpioFactory.setDefaultProvider(new RaspiGpioProvider(RaspiPinNumberingScheme.BROADCOM_PIN_NUMBERING));
+	}
+	
 	public final Motor motor1 = new Motor(RaspiBcmPin.GPIO_12, RaspiBcmPin.GPIO_24, RaspiBcmPin.GPIO_22);
 	public final Motor motor2 = new Motor(RaspiBcmPin.GPIO_13, RaspiBcmPin.GPIO_25, RaspiBcmPin.GPIO_23);
 
