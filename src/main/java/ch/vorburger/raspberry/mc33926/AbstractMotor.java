@@ -1,10 +1,8 @@
 package ch.vorburger.raspberry.mc33926;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static ch.vorburger.raspberry.mc33926.SleepUtil.sleepSeconds;
 
 public abstract class AbstractMotor {
-	private static final Logger LOG = LoggerFactory.getLogger(Motor.class);
 
 	protected abstract void setSpeed(int speed);
 
@@ -17,23 +15,14 @@ public abstract class AbstractMotor {
 		if (end > start) {
 			for (int s = start; s <= end; s++) {
 				setSpeed(s);
-				sleep(0.005);
-			}			
+				sleepSeconds(0.005);
+			}
 		} else {
 			for (int s = start; s >= end; s--) {
 				setSpeed(s);
-				sleep(0.005);
+				sleepSeconds(0.005);
 			}			
 		}
 	}
 	
-	private void sleep(double second) {
-		try {
-			Thread.sleep((long) (second * 1000));
-		} catch (InterruptedException e) {
-			LOG.warn("sleep() InterruptedException", e);
-		}
-
-	}
-
 }

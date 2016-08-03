@@ -1,6 +1,7 @@
 package ch.vorburger.raspberry.mc33926;
 
 import static ch.vorburger.raspberry.mc33926.Motor.MAX_SPEED;
+import static ch.vorburger.raspberry.mc33926.SleepUtil.sleepSeconds;
 
 public class ExampleMain {
 
@@ -21,6 +22,14 @@ public class ExampleMain {
 			
 			print("Motor 2 reverse");
 			motors.motor2.stepToAndInverse(0, -MAX_SPEED);
+
+			print("Motor 1 & 2 forward");
+			motors.setSpeeds(MAX_SPEED, MAX_SPEED);
+			sleepSeconds(3);
+
+			print("Motor 1 & 2 reverse");
+			motors.setSpeeds(-MAX_SPEED, -MAX_SPEED);
+			sleepSeconds(3);
 			
 		} finally {
 			motors.setSpeeds(0, 0);
