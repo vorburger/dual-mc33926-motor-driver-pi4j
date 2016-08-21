@@ -6,15 +6,15 @@ import org.slf4j.LoggerFactory;
 public class SleepUtil {
 	private static final Logger LOG = LoggerFactory.getLogger(Motor.class);
 
-	public static void sleepSeconds(double second) {
+	public static void sleepSeconds(double seconds) {
 		try {
-			Thread.sleep((long) (second * 1000));
+			Thread.sleep((long) (seconds * 1000));
 		} catch (InterruptedException e) {
 			LOG.warn("sleep() InterruptedException", e);
 		}
-
 	}
-
+	
 	private SleepUtil() {
 	}
+
 }
