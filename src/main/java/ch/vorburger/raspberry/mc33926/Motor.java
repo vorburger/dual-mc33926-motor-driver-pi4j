@@ -7,6 +7,7 @@ import com.pi4j.io.gpio.GpioFactory;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.io.gpio.GpioPinPwmOutput;
 import com.pi4j.io.gpio.Pin;
+import com.pi4j.io.gpio.PinPullResistance;
 import com.pi4j.io.gpio.PinState;
 import com.pi4j.wiringpi.Gpio;
 
@@ -36,6 +37,9 @@ public class Motor extends AbstractMotor {
 
 		directionGpioPin = gpio.provisionDigitalOutputPin(directionPin, "direction");
 		enableGpioPin = gpio.provisionDigitalOutputPin(enablePin, "enable", PinState.LOW);
+		
+		// setShutdownOptions() on (all of, entire) gpio, not just e.g. the enableGpioPin
+		gpio.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
 	}
 
 	public void enable() {
