@@ -1,6 +1,6 @@
-package ch.vorburger.raspberry.mc33926.turtle;
+package ch.vorburger.raspberry.turtle;
 
-import ch.vorburger.raspberry.mc33926.SafeMotors;
+import ch.vorburger.raspberry.motors.SafeMotors;
 
 public class SafeTurtle {
 

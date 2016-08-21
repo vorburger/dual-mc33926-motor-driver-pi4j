@@ -5,6 +5,8 @@ import com.pi4j.io.gpio.RaspiBcmPin;
 import com.pi4j.io.gpio.RaspiGpioProvider;
 import com.pi4j.io.gpio.RaspiPinNumberingScheme;
 
+import ch.vorburger.raspberry.motors.ReverseMotor;
+
 public class Motors {
 
 	static {

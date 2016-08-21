@@ -1,4 +1,4 @@
-package ch.vorburger.raspberry.mc33926.turtle;
+package ch.vorburger.raspberry.turtle;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

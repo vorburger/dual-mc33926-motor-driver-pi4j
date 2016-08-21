@@ -8,6 +8,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import ch.vorburger.raspberry.motors.AbstractMotor;
+
 public class MotorTest {
 
 	private static class TestMotor extends AbstractMotor {

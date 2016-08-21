@@ -1,6 +1,6 @@
-package ch.vorburger.raspberry.mc33926;
+package ch.vorburger.raspberry.motors;
 
-import static ch.vorburger.raspberry.mc33926.SleepUtil.sleepSeconds;
+import static ch.vorburger.raspberry.motors.SleepUtil.sleepSeconds;
 
 public abstract class AbstractMotor {
 

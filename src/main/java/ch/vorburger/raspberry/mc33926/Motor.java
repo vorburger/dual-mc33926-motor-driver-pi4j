@@ -11,6 +11,8 @@ import com.pi4j.io.gpio.PinPullResistance;
 import com.pi4j.io.gpio.PinState;
 import com.pi4j.wiringpi.Gpio;
 
+import ch.vorburger.raspberry.motors.AbstractMotor;
+
 public class Motor extends AbstractMotor {
 	// private static final Logger LOG = LoggerFactory.getLogger(Motor.class);
 

@@ -1,10 +1,10 @@
 package ch.vorburger.raspberry.mc33926;
 
 import static ch.vorburger.raspberry.mc33926.Motor.MAX_SPEED;
-import static ch.vorburger.raspberry.mc33926.SleepUtil.sleepSeconds;
+import static ch.vorburger.raspberry.motors.SleepUtil.sleepSeconds;
 
-import ch.vorburger.raspberry.mc33926.turtle.SafeTurtle;
-import ch.vorburger.raspberry.mc33926.turtle.Turtle;
+import ch.vorburger.raspberry.turtle.SafeTurtle;
+import ch.vorburger.raspberry.turtle.Turtle;
 
 public class ExampleMain {
 

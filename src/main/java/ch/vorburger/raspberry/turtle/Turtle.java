@@ -1,4 +1,4 @@
-package ch.vorburger.raspberry.mc33926.turtle;
+package ch.vorburger.raspberry.turtle;
 
 import ch.vorburger.raspberry.mc33926.Motor;
 import ch.vorburger.raspberry.mc33926.Motors;
