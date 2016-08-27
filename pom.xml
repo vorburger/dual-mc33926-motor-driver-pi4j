@@ -2,13 +2,6 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<!-- TODO move into *-app artifact & use import pom instead of parent -->
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.0.RELEASE</version>
-	</parent>
-
 	<groupId>ch.vorburger.raspberry</groupId>
 	<artifactId>mc33926</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
@@ -39,9 +32,6 @@
 			<version>1.1</version>
 		</dependency>
 
-		<!-- Web App TODO move into *-app artifact <dependency> <groupId>org.springframework.boot</groupId> 
-			<artifactId>spring-boot-starter-web</artifactId> </dependency> -->
-
 		<!-- Tests -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -68,22 +58,6 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<mainClass>ch.vorburger.raspberry.mc33926.ExampleMain</mainClass>
-				</configuration>
-			</plugin>
-
 
 			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>license-maven-plugin</artifactId> 
 				<version>1.9</version> <configuration> <licenseName>apache_v2</licenseName> 
