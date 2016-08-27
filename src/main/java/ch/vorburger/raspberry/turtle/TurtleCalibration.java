@@ -23,7 +23,7 @@ public class TurtleCalibration {
 
 		System.out.println("Let's try now - I'm going to run in what should be a perfect square... hit Enter when ready?");
 		System.console().readLine();
-		new SafeMotors(motors).run(_motors -> {
+		SafeMotors.move(motors, _motors -> {
 			Turtle calibratedTurtle = new Turtle(_motors, turnDegreeSleepSeconds);
 			for (int i = 0; i < 4; i++) {
 				calibratedTurtle.forward(2);
