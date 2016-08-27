@@ -1,19 +1,14 @@
 package ch.vorburger.raspberry.motors;
 
 import ch.vorburger.raspberry.mc33926.TwoMotors;
-import ch.vorburger.raspberry.mc33926.TwoMotorsProvider;
 
 public class SafeMotors {
 
-	static public void move(SafeMotorsRunnable runnable) {
-		new SafeMotors().run(runnable);
+	static public void move(TwoMotors motors, SafeMotorsRunnable runnable) {
+		new SafeMotors(motors).run(runnable);
 	}
 
 	protected final TwoMotors motors;
-
-	public SafeMotors() {
-		motors = new TwoMotorsProvider().get();
-	}
 
 	public SafeMotors(TwoMotors motors) {
 		this.motors = motors;

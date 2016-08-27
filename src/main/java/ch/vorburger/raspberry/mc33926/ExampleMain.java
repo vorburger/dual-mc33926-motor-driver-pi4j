@@ -9,6 +9,7 @@ import ch.vorburger.raspberry.turtle.Turtle;
 public class ExampleMain {
 
 	public static void main(String[] args) throws Exception {
+		TwoMotors twoMotors = new TwoMotorsProvider().get();
 		// This is just to initially stop it.. handy if things went out of control! ;)
 //		SafeMotors.move(motors -> { });
 //		System.out.println("Hit Enter when ready for Rover to moving?");
@@ -16,7 +17,7 @@ public class ExampleMain {
 
 //		TurtleCalibration.main(args);
 
-		SafeTurtle.move(turtle -> {
+		SafeTurtle.move(twoMotors, turtle -> {
 			triangle(turtle);
 			dance(turtle);
 		});
