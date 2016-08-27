@@ -4,9 +4,9 @@ import static ch.vorburger.raspberry.motors.SleepUtil.sleepSeconds;
 
 public abstract class Motor {
 
-	protected abstract void enable();
-	protected abstract void disable();
-	protected abstract void setSpeed(int speed);
+	public abstract void enable();
+	public abstract void disable();
+	public abstract void setSpeed(int speed);
 
 	public void stepToAndInverse(int start, int end) {
 		stepTo(start, end);

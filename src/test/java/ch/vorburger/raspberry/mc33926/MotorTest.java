@@ -17,16 +17,16 @@ public class MotorTest {
 		List<Integer> setSpeeds = new ArrayList<>();
 
 		@Override
-		protected void setSpeed(int speed) {
+		public void setSpeed(int speed) {
 			setSpeeds.add(speed);
 		}
 
 		@Override
-		protected void enable() {
+		public void enable() {
 		}
 
 		@Override
-		protected void disable() {
+		public void disable() {
 		}
 
 	}
