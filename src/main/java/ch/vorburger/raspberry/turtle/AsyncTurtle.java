@@ -7,7 +7,7 @@ import ch.vorburger.raspberry.motors.TwoMotors;
 
 public class AsyncTurtle extends Turtle {
 
-	protected final ExecutorService executor = Executors.newSingleThreadExecutor();
+	protected ExecutorService executor = getNewExecutorService();
 
 	public AsyncTurtle(TwoMotors motors) {
 		super(motors);
@@ -19,17 +19,29 @@ public class AsyncTurtle extends Turtle {
 
 	@Override
 	protected synchronized void unidirectional(double seconds, int speed) {
-		executor.submit(() -> super.unidirectional(seconds, speed));
+		getExecutorService().submit(() -> super.unidirectional(seconds, speed));
 	}
 
 	@Override
 	protected synchronized void turn(int degrees, boolean direction) {
-		executor.submit(() -> super.turn(degrees, direction));
+		getExecutorService().submit(() -> super.turn(degrees, direction));
+	}
+
+	private ExecutorService getNewExecutorService() {
+		return Executors.newSingleThreadExecutor();
+	}
+
+	private ExecutorService getExecutorService() {
+		if (executor.isShutdown()) {
+			executor = getNewExecutorService();
+		}
+		return executor;
 	}
 
 	@Override
 	public void halt() {
 		super.halt();
 		executor.shutdownNow();
+		super.halt();
 	}
 }
