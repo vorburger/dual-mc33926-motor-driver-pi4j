@@ -27,7 +27,9 @@ public class AsyncTurtle extends Turtle {
 		executor.submit(() -> super.turn(degrees, direction));
 	}
 
-	public void stop() {
+	@Override
+	public void halt() {
+		super.halt();
 		executor.shutdownNow();
 	}
 }

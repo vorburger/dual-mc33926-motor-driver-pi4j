@@ -16,7 +16,7 @@ public class TurtleCalibration {
 		asyncTurtle.turnRight(2000); // intentionally too large
 		System.console().readLine();
 		time = System.currentTimeMillis() - time;
-		asyncTurtle.stop();
+		asyncTurtle.halt();
 
 		double turnDegreeSleepSeconds = ((double) time)/1000 / 720;
 		System.out.println("OK so the calculated calibration parameter for the Turtle constructor is: " + turnDegreeSleepSeconds);
