@@ -8,11 +8,11 @@ import java.util.List;
 
 import org.junit.Test;
 
-import ch.vorburger.raspberry.motors.AbstractMotor;
+import ch.vorburger.raspberry.motors.Motor;
 
 public class MotorTest {
 
-	private static class TestMotor extends AbstractMotor {
+	private static class TestMotor extends Motor {
 
 		List<Integer> setSpeeds = new ArrayList<>();
 

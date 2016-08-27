@@ -2,7 +2,7 @@ package ch.vorburger.raspberry.motors;
 
 import static ch.vorburger.raspberry.motors.SleepUtil.sleepSeconds;
 
-public abstract class AbstractMotor {
+public abstract class Motor {
 
 	protected abstract void enable();
 	protected abstract void disable();
