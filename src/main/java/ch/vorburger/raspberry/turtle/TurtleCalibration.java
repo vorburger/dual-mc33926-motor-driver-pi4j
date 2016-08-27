@@ -11,7 +11,7 @@ public class TurtleCalibration {
 				+ "hit Enter when ready to start, and Enter again exactly when it has turned around 720° ...");
 		System.console().readLine();
 		TwoMotors motors = new TwoMotorsProvider().get();
-		AsyncTurtle asyncTurtle = new AsyncTurtle(motors);
+		QueueingTurtle asyncTurtle = new QueueingTurtle(motors);
 		long time = System.currentTimeMillis();
 		asyncTurtle.turnRight(2000); // intentionally too large
 		System.console().readLine();

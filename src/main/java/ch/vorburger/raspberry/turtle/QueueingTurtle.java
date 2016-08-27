@@ -5,15 +5,15 @@ import java.util.concurrent.Executors;
 
 import ch.vorburger.raspberry.motors.TwoMotors;
 
-public class AsyncTurtle extends Turtle {
+public class QueueingTurtle extends Turtle {
 
 	protected ExecutorService executor = getNewExecutorService();
 
-	public AsyncTurtle(TwoMotors motors) {
+	public QueueingTurtle(TwoMotors motors) {
 		super(motors);
 	}
 
-	public AsyncTurtle(TwoMotors motors, double turnDegreeSleep) {
+	public QueueingTurtle(TwoMotors motors, double turnDegreeSleep) {
 		super(motors, turnDegreeSleep);
 	}
 
