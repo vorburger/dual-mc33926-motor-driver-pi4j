@@ -3,10 +3,10 @@ package ch.vorburger.raspberry.motors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ch.vorburger.raspberry.mc33926.Motor;
+import ch.vorburger.raspberry.mc33926.GpioMotor;
 
 public class SleepUtil {
-	private static final Logger LOG = LoggerFactory.getLogger(Motor.class);
+	private static final Logger LOG = LoggerFactory.getLogger(GpioMotor.class);
 
 	public static void sleepSeconds(double seconds) {
 		try {

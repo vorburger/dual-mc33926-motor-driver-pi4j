@@ -13,7 +13,7 @@ import com.pi4j.wiringpi.Gpio;
 
 import ch.vorburger.raspberry.motors.AbstractMotor;
 
-public class Motor extends AbstractMotor {
+public class GpioMotor extends AbstractMotor {
 	// private static final Logger LOG = LoggerFactory.getLogger(Motor.class);
 
 	/**
@@ -27,7 +27,7 @@ public class Motor extends AbstractMotor {
 
 	private boolean enabled = false;
 
-	public Motor(Pin pwmPin, Pin directionPin, Pin enablePin) {
+	public GpioMotor(Pin pwmPin, Pin directionPin, Pin enablePin) {
 		GpioController gpio = GpioFactory.getInstance();
 
 		Gpio.pwmSetMode(PWM_MODE_MS);

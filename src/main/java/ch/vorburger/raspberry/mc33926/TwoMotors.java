@@ -2,20 +2,20 @@ package ch.vorburger.raspberry.mc33926;
 
 public class TwoMotors {
 
-	public final Motor motor1;
-	public final Motor motor2;
+	public final GpioMotor motor1;
+	public final GpioMotor motor2;
 
-	public TwoMotors(Motor motor1, Motor motor2) {
+	public TwoMotors(GpioMotor motor1, GpioMotor motor2) {
 		super();
 		this.motor1 = motor1;
 		this.motor2 = motor2;
 	}
 
-	public Motor motor1() {
+	public GpioMotor motor1() {
 		return motor1;
 	}
 
-	public Motor motor2() {
+	public GpioMotor motor2() {
 		return motor2;
 	}
 

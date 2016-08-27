@@ -1,6 +1,6 @@
 package ch.vorburger.raspberry.mc33926;
 
-import static ch.vorburger.raspberry.mc33926.Motor.MAX_SPEED;
+import static ch.vorburger.raspberry.mc33926.GpioMotor.MAX_SPEED;
 import static ch.vorburger.raspberry.motors.SleepUtil.sleepSeconds;
 
 import ch.vorburger.raspberry.turtle.SafeTurtle;

@@ -1,6 +1,6 @@
 package ch.vorburger.raspberry.turtle;
 
-import ch.vorburger.raspberry.mc33926.Motor;
+import ch.vorburger.raspberry.mc33926.GpioMotor;
 import ch.vorburger.raspberry.mc33926.TwoMotors;
 
 public class Turtle {
@@ -8,7 +8,7 @@ public class Turtle {
 	private final TwoMotors motors;
 	private final double turnDegreeSleepFactor;
 
-	private int speed = Motor.MAX_SPEED;
+	private int speed = GpioMotor.MAX_SPEED;
 
 	public Turtle(TwoMotors motors, double turnDegreeSleep) {
 		this.motors = motors;
