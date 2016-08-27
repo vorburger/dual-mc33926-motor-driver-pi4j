@@ -1,20 +1,23 @@
 package ch.vorburger.raspberry.mc33926;
 
-import com.pi4j.io.gpio.GpioFactory;
-import com.pi4j.io.gpio.RaspiBcmPin;
-import com.pi4j.io.gpio.RaspiGpioProvider;
-import com.pi4j.io.gpio.RaspiPinNumberingScheme;
-
-import ch.vorburger.raspberry.motors.ReverseMotor;
-
 public class TwoMotors {
 
-	static {
-		GpioFactory.setDefaultProvider(new RaspiGpioProvider(RaspiPinNumberingScheme.BROADCOM_PIN_NUMBERING));
+	public final Motor motor1;
+	public final Motor motor2;
+
+	public TwoMotors(Motor motor1, Motor motor2) {
+		super();
+		this.motor1 = motor1;
+		this.motor2 = motor2;
 	}
-	
-	public final Motor motor1 = new Motor(RaspiBcmPin.GPIO_12, RaspiBcmPin.GPIO_24, RaspiBcmPin.GPIO_22);
-	public final Motor motor2 = new ReverseMotor(RaspiBcmPin.GPIO_13, RaspiBcmPin.GPIO_25, RaspiBcmPin.GPIO_23);
+
+	public Motor motor1() {
+		return motor1;
+	}
+
+	public Motor motor2() {
+		return motor2;
+	}
 
 	public void enable() {
 		motor1.enable();

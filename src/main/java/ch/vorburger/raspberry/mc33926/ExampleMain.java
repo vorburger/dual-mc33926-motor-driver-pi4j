@@ -53,16 +53,16 @@ public class ExampleMain {
 
 	private static void motors(TwoMotors motors) {
 		print("Motor 1 forward");
-		motors.motor1.stepToAndInverse(0, MAX_SPEED);
+		motors.motor1().stepToAndInverse(0, MAX_SPEED);
 
 		print("Motor 1 reverse");
-		motors.motor1.stepToAndInverse(0, -MAX_SPEED);
+		motors.motor1().stepToAndInverse(0, -MAX_SPEED);
 
 		print("Motor 2 forward");
-		motors.motor2.stepToAndInverse(0, MAX_SPEED);
+		motors.motor2().stepToAndInverse(0, MAX_SPEED);
 
 		print("Motor 2 reverse");
-		motors.motor2.stepToAndInverse(0, -MAX_SPEED);
+		motors.motor2().stepToAndInverse(0, -MAX_SPEED);
 
 		print("Motor 1 & 2 forward");
 		motors.setSpeeds(MAX_SPEED, MAX_SPEED);

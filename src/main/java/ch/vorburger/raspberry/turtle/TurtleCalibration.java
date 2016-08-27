@@ -1,6 +1,7 @@
 package ch.vorburger.raspberry.turtle;
 
 import ch.vorburger.raspberry.mc33926.TwoMotors;
+import ch.vorburger.raspberry.mc33926.TwoMotorsProvider;
 import ch.vorburger.raspberry.motors.SafeMotors;
 
 public class TurtleCalibration {
@@ -9,7 +10,7 @@ public class TurtleCalibration {
 		System.out.println("Please watch how long it will take the Rover Turtle to turn around its axis twice... "
 				+ "hit Enter when ready to start, and Enter again exactly when it has turned around 720° ...");
 		System.console().readLine();
-		TwoMotors motors = new TwoMotors();
+		TwoMotors motors = new TwoMotorsProvider().get();
 		AsyncTurtle asyncTurtle = new AsyncTurtle(motors);
 		long time = System.currentTimeMillis();
 		asyncTurtle.turnRight(2000); // intentionally too large
