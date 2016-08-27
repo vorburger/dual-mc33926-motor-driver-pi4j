@@ -49,8 +49,7 @@ public class Turtle {
 
 	protected synchronized void unidirectional(double seconds, int speed) {
 		motors.setSpeeds(speed, speed);
-		sleepSeconds(seconds);
-		halt();
+		haltInSeconds(seconds);
 	}
 
 	protected synchronized void turn(int degrees, boolean direction) {
@@ -58,14 +57,15 @@ public class Turtle {
 			motors.setSpeeds(speed, -speed);
 		else
 			motors.setSpeeds(-speed, speed);
-		sleepSeconds(turnDegreeSleepFactor * Math.abs(degrees));
-		halt();
+		haltInSeconds(turnDegreeSleepFactor * Math.abs(degrees));
 	}
 
-	protected void sleepSeconds(double seconds) {
+	protected synchronized void haltInSeconds(double seconds) {
 		try {
 			Thread.sleep((long) (seconds * 1000));
 		} catch (InterruptedException e) {
+			// Do nothing.
+		} finally {
 			halt();
 		}
 	}
