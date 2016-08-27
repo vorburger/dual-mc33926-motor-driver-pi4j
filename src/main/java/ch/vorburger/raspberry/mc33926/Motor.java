@@ -39,21 +39,24 @@ public class Motor extends AbstractMotor {
 
 		directionGpioPin = gpio.provisionDigitalOutputPin(directionPin, "direction");
 		enableGpioPin = gpio.provisionDigitalOutputPin(enablePin, "enable", PinState.LOW);
-		
+
 		// setShutdownOptions() on (all of, entire) gpio, not just e.g. the enableGpioPin
 		gpio.setShutdownOptions(true, PinState.LOW, PinPullResistance.OFF);
 	}
 
+	@Override
 	public void enable() {
 		enabled = true;
 		enableGpioPin.setState(PinState.HIGH);
 	}
 
+	@Override
 	public void disable() {
 		enabled = false;
 		enableGpioPin.setState(PinState.LOW);
 	}
 
+	@Override
 	public void setSpeed(int speed) {
 		if (!enabled)
 			enable();

@@ -15,21 +15,29 @@ public class MotorTest {
 	private static class TestMotor extends AbstractMotor {
 
 		List<Integer> setSpeeds = new ArrayList<>();
-		
+
 		@Override
 		protected void setSpeed(int speed) {
 			setSpeeds.add(speed);
 		}
 
+		@Override
+		protected void enable() {
+		}
+
+		@Override
+		protected void disable() {
+		}
+
 	}
-	
+
 	@Test
 	public void stepTo() {
 		TestMotor motor = new TestMotor();
 		motor.stepTo(0, 3);
 		assertEquals(Arrays.asList(0, 1, 2, 3), motor.setSpeeds);
 	}
-	
+
 	@Test
 	public void stepToAndInverse() {
 		TestMotor motor = new TestMotor();
