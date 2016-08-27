@@ -9,6 +9,7 @@ import com.pi4j.io.gpio.RaspiPinNumberingScheme;
 
 import ch.vorburger.raspberry.motors.LoggingMotor;
 import ch.vorburger.raspberry.motors.ReverseMotor;
+import ch.vorburger.raspberry.motors.TwoMotors;
 
 public class TwoMotorsProvider implements Provider<TwoMotors> {
 

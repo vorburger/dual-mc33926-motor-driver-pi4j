@@ -3,7 +3,7 @@ package ch.vorburger.raspberry.turtle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import ch.vorburger.raspberry.mc33926.TwoMotors;
+import ch.vorburger.raspberry.motors.TwoMotors;
 
 public class AsyncTurtle extends Turtle {
 

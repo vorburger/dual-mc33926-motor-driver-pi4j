@@ -1,8 +1,8 @@
 package ch.vorburger.raspberry.turtle;
 
-import ch.vorburger.raspberry.mc33926.TwoMotors;
 import ch.vorburger.raspberry.mc33926.TwoMotorsProvider;
 import ch.vorburger.raspberry.motors.SafeMotors;
+import ch.vorburger.raspberry.motors.TwoMotors;
 
 public class TurtleCalibration {
 

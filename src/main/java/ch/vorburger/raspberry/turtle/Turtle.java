@@ -1,7 +1,7 @@
 package ch.vorburger.raspberry.turtle;
 
 import ch.vorburger.raspberry.mc33926.GpioMotor;
-import ch.vorburger.raspberry.mc33926.TwoMotors;
+import ch.vorburger.raspberry.motors.TwoMotors;
 
 public class Turtle {
 

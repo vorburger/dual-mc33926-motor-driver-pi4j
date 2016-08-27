@@ -1,6 +1,4 @@
-package ch.vorburger.raspberry.mc33926;
-
-import ch.vorburger.raspberry.motors.Motor;
+package ch.vorburger.raspberry.motors;
 
 public class TwoMotors {
 
