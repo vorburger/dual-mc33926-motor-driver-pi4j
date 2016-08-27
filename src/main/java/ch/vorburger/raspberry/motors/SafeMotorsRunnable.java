@@ -1,10 +1,10 @@
 package ch.vorburger.raspberry.motors;
 
-import ch.vorburger.raspberry.mc33926.Motors;
+import ch.vorburger.raspberry.mc33926.TwoMotors;
 
 @FunctionalInterface
 public interface SafeMotorsRunnable {
 
-	void run(Motors motors);
+	void run(TwoMotors motors);
 
 }

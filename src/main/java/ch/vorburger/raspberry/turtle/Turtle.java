@@ -1,21 +1,21 @@
 package ch.vorburger.raspberry.turtle;
 
 import ch.vorburger.raspberry.mc33926.Motor;
-import ch.vorburger.raspberry.mc33926.Motors;
+import ch.vorburger.raspberry.mc33926.TwoMotors;
 
 public class Turtle {
 
-	private final Motors motors;
+	private final TwoMotors motors;
 	private final double turnDegreeSleepFactor;
 
 	private int speed = Motor.MAX_SPEED;
 
-	public Turtle(Motors motors, double turnDegreeSleep) {
+	public Turtle(TwoMotors motors, double turnDegreeSleep) {
 		this.motors = motors;
 		this.turnDegreeSleepFactor = turnDegreeSleep;
 	}
 
-	public Turtle(Motors motors) {
+	public Turtle(TwoMotors motors) {
 		this(motors, 0.021284722222222222); // see TurtleCalibration
 	}
 

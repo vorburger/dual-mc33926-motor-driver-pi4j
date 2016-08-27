@@ -7,7 +7,7 @@ import com.pi4j.io.gpio.RaspiPinNumberingScheme;
 
 import ch.vorburger.raspberry.motors.ReverseMotor;
 
-public class Motors {
+public class TwoMotors {
 
 	static {
 		GpioFactory.setDefaultProvider(new RaspiGpioProvider(RaspiPinNumberingScheme.BROADCOM_PIN_NUMBERING));

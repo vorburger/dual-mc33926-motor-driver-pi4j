@@ -1,6 +1,6 @@
 package ch.vorburger.raspberry.motors;
 
-import ch.vorburger.raspberry.mc33926.Motors;
+import ch.vorburger.raspberry.mc33926.TwoMotors;
 
 public class SafeMotors {
 
@@ -8,13 +8,13 @@ public class SafeMotors {
 		new SafeMotors().run(runnable);
 	}
 
-	protected final Motors motors;
+	protected final TwoMotors motors;
 
 	public SafeMotors() {
-		motors = new Motors();
+		motors = new TwoMotors();
 	}
 
-	public SafeMotors(Motors motors) {
+	public SafeMotors(TwoMotors motors) {
 		this.motors = motors;
 	}
 

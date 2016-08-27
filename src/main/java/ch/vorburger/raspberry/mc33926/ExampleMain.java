@@ -51,7 +51,7 @@ public class ExampleMain {
 		turtle.forward(2);
 	}
 
-	private static void motors(Motors motors) {
+	private static void motors(TwoMotors motors) {
 		print("Motor 1 forward");
 		motors.motor1.stepToAndInverse(0, MAX_SPEED);
 
