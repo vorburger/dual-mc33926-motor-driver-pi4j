@@ -8,25 +8,22 @@ import java.util.List;
 
 import org.junit.Test;
 
-import ch.vorburger.raspberry.motors.Motor;
+import ch.vorburger.raspberry.motors.LoggingMotor;
 
 public class MotorTest {
 
-	private static class TestMotor extends Motor {
+	private static class TestMotor extends LoggingMotor {
 
 		List<Integer> setSpeeds = new ArrayList<>();
+
+		public TestMotor() {
+			super("test");
+		}
 
 		@Override
 		public void setSpeed(int speed) {
 			setSpeeds.add(speed);
-		}
-
-		@Override
-		public void enable() {
-		}
-
-		@Override
-		public void disable() {
+			super.setSpeed(speed);
 		}
 
 	}
