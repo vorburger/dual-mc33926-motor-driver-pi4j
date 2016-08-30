@@ -1,17 +1,25 @@
 package ch.vorburger.raspberry.motors;
 
-import com.pi4j.io.gpio.Pin;
+public class ReverseMotor extends Motor {
 
-import ch.vorburger.raspberry.mc33926.GpioMotor;
+	private final Motor delegatingMotor;
 
-public class ReverseMotor extends GpioMotor {
-
-	public ReverseMotor(Pin pwmPin, Pin directionPin, Pin enablePin) {
-		super(pwmPin, directionPin, enablePin);
+	public ReverseMotor(Motor delegatingMotor) {
+		this.delegatingMotor = delegatingMotor;
 	}
 
 	@Override
 	public void setSpeed(int speed) {
-		super.setSpeed( -speed);
+		delegatingMotor.setSpeed( -speed);
+	}
+
+	@Override
+	public void enable() {
+		delegatingMotor.enable();
+	}
+
+	@Override
+	public void disable() {
+		delegatingMotor.disable();
 	}
 }
