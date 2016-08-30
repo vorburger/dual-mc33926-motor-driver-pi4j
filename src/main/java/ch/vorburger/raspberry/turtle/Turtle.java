@@ -63,10 +63,10 @@ public class Turtle {
 	protected synchronized void haltInSeconds(double seconds) {
 		try {
 			Thread.sleep((long) (seconds * 1000));
-		} catch (InterruptedException e) {
-			// Do nothing.
-		} finally {
 			halt();
+		} catch (InterruptedException e) {
+			// Do nothing.  (Don't stop; see AsyncTurtle & AsyncTurtleTest for why.)
 		}
 	}
+
 }
