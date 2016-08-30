@@ -14,7 +14,7 @@ class TestMotor extends LoggingMotor {
 	}
 
 	@Override
-	public void setSpeed(int speed) {
+	public synchronized void setSpeed(int speed) {
 		setSpeeds.add(speed);
 		super.setSpeed(speed);
 	}
