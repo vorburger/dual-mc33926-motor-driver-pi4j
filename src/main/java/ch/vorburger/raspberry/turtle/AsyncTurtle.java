@@ -13,8 +13,7 @@ public class AsyncTurtle extends Turtle {
 	@Override
 	protected synchronized void haltInSeconds(double seconds) {
 		interruptAsyncStopThread();
-		final Turtle turtle = this;
-		asyncStopThread = new Thread((Runnable) () -> turtle.haltInSeconds(seconds), "AsyncTurtle.halt()");
+		asyncStopThread = new Thread((Runnable) () -> super.haltInSeconds(seconds), "AsyncTurtle.halt()");
 		asyncStopThread.start();
 	}
 
