@@ -23,7 +23,7 @@ public class QueueingTurtle extends Turtle {
 	}
 
 	@Override
-	protected synchronized void turn(int degrees, boolean direction) {
+	protected synchronized void turn(double degrees, boolean direction) {
 		getExecutorService().submit(() -> super.turn(degrees, direction));
 	}
 

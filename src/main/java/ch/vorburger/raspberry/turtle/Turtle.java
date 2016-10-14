@@ -39,11 +39,11 @@ public class Turtle {
 		unidirectional(seconds, -speed);
 	}
 
-	public synchronized void turnRight(int degrees) {
+	public synchronized void turnRight(double degrees) {
 		turn(degrees, true);
 	}
 
-	public synchronized void turnLeft(int degrees) {
+	public synchronized void turnLeft(double degrees) {
 		turn(-degrees, false);
 	}
 
@@ -52,7 +52,7 @@ public class Turtle {
 		haltInSeconds(seconds);
 	}
 
-	protected synchronized void turn(int degrees, boolean direction) {
+	protected synchronized void turn(double degrees, boolean direction) {
 		if (direction)
 			motors.setSpeeds(speed, -speed);
 		else
